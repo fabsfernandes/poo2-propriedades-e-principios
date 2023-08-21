@@ -1,39 +1,29 @@
 package interfacesegregation;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author fabiola
- */
 public class InterfaceSegregation {
     
     public InterfaceSegregation() {
-        doIncorrectImplementation();
+        //doIncorrectImplementation();
         doCorrectImplementation();
     }
     
 
     public void doIncorrectImplementation() {
         /**
-         * Crow e Penguin são classes que implementam a interface Bird
+         * Crow e Penguin classes implementam a interface Bird
          */
         interfacesegregation.incorrect.Crow crow = new interfacesegregation.incorrect.Crow();
         interfacesegregation.incorrect.Penguin penguin = new interfacesegregation.incorrect.Penguin();
         
         /**
-         * Os métodos da interface funcionam bem para corvos (Crow), já que eles podem comer, dormir e voar
+         * Os metodos funcionam bem para um passaro que pode comer, dormir e voar
          */
         crow.eat();
         crow.sleep();
         crow.fly();
         
          /**
-         * Os métodos comer (eat) e dormir (sleep) da interface funcionam bem para pinguins (Penguin).
-         * Porém, não há uso do método voar (fly) para pinguins. Entretanto, aqui há a obrigação de se implementar esse método
+         * Os metodos nao funcionam bem para o Penguin que pode comer e dormir, mas nao pode voar
          */
         penguin.eat();
         penguin.sleep();
@@ -42,8 +32,26 @@ public class InterfaceSegregation {
     
     public void doCorrectImplementation() {
         /**
-         * Adicione aqui seu código refatorado com referências a métodos e classes contidas no pacote openclosed.correct
+         * Adicione aqui seu código refatorado com referências a métodos e classes contidas no pacote interfacesegregation.correct
          */
+        /**
+         * Crow e Penguin classes implementam as interfaces BirdCanFly e Bird, respectivamente
+         */
+        interfacesegregation.correct.Crow crow = new interfacesegregation.correct.Crow();
+        interfacesegregation.correct.Penguin penguin = new interfacesegregation.correct.Penguin();
+        
+        /**
+         * Os metodos funcionam bem para um passaro que pode comer, dormir e voar
+         */
+        crow.eat();
+        crow.sleep();
+        crow.fly();
+        
+         /**
+         * Os metodos funcionam bem para o Penguin que pode comer e dormir, mas nao pode voar
+         */
+        penguin.eat();
+        penguin.sleep();
     }
     
     public static void main(String [] args) {
