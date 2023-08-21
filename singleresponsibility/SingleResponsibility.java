@@ -29,6 +29,14 @@ public class SingleResponsibility {
         /**
          * Adicione aqui seu código refatorado com referências a métodos e classes contidas no pacote singleresponsibility.correct
          */
+        singleresponsibility.correct.Book book = new singleresponsibility.correct.Book("Clean Architecture", "Robert Martin", "Science");
+        
+        /*
+        * A classe BookPrinter fica responsável por todas as impressões de saída, não quebrando a coesão da classe Book
+        */
+        singleresponsibility.correct.BookPrinter bookPrinter = new singleresponsibility.correct.BookPrinter();
+        bookPrinter.printAuthorName(book);
+        
 
     }
     
