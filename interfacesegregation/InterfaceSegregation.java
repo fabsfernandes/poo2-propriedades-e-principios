@@ -19,21 +19,21 @@ public class InterfaceSegregation {
 
     public void doIncorrectImplementation() {
         /**
-         * Crow e Penguin classes implementam a interface Bird
+         * Crow e Penguin são classes que implementam a interface Bird
          */
         interfacesegregation.incorrect.Crow crow = new interfacesegregation.incorrect.Crow();
         interfacesegregation.incorrect.Penguin penguin = new interfacesegregation.incorrect.Penguin();
         
         /**
-         * The implemented methods work fine with Crow as a crow can eat, sleep and fly
+         * Os métodos da interface funcionam bem para corvos (Crow), já que eles podem comer, dormir e voar
          */
         crow.eat();
         crow.sleep();
         crow.fly();
         
          /**
-         * The implemented methods  do not work with Penguin as a penguin can eat, sleep but cannot fly.
-         * There is no use fly() for the Penguin, still it is forced to implement the fly()
+         * Os métodos comer (eat) e dormir (sleep) da interface funcionam bem para pinguins (Penguin).
+         * Porém, não há uso do método voar (fly) para pinguins. Entretanto, aqui há a obrigação de se implementar esse método
          */
         penguin.eat();
         penguin.sleep();
